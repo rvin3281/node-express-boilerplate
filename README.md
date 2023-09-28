@@ -2,6 +2,8 @@
 
 A robust and scalable boilerplate for building Node Express applications. This boilerplate is designed with best practices in mind, separating concerns, handling logging efficiently, and managing environment-specific configurations using .env.
 
+This boilerplate also has been configured to work seamlessly with MongoDB, a popular NoSQL database, and uses Mongoose as an elegant MongoDB object modeling for Node.js.
+
 ## Table of Contents
 
 Features
@@ -11,6 +13,9 @@ Dependencies
 File Structure
 Logging
 Environment Variables
+MongoDB connection
+Mongoose
+Database Configuration
 
 ## Features
 
@@ -57,3 +62,23 @@ This boilerplate uses dotenv to manage environment variables. Ensure you have a 
 
 PORT: Port number for the application to run on (default is 3000).
 ... and any other environment-specific variables you need.
+
+## MongoDB Connection:
+
+Separation of Concerns: The connection logic for MongoDB has been separated out into utils/database/mongoDB.js.
+
+Environment-aware Connection String: Depending on the environment (development or production), the boilerplate chooses the appropriate connection string (DATABASE_LOCAL or DATABASE_REMOTE) from the .env file.
+
+Robust Error Handling: In case the connection to the MongoDB server fails, the server logs the error and shuts down gracefully.
+
+## Mongoose:
+
+Object Data Modeling (ODM): Mongoose provides a straight-forward, schema-based solution to model your application data. This includes built-in type casting, validation, query building, and more.
+
+## Database Configuration:
+
+Add the following environment variables to your .env file:
+
+DATABASE_LOCAL: Your MongoDB connection string for your local database.
+
+DATABASE_REMOTE: Your MongoDB connection string for your production database. Ensure this remains confidential to protect your production data.
