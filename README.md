@@ -1,4 +1,4 @@
-# Node Express Boilerplate
+# Node Express, MongoDB and Mongoose Boilerplate
 
 A robust and scalable boilerplate for building Node Express applications. This boilerplate is designed with best practices in mind, separating concerns, handling logging efficiently, and managing environment-specific configurations using .env.
 
